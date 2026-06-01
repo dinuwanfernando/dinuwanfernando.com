@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/*
+  Design tokens (Tailwind v4 CSS-first config).
+  Color keys generate bg-*, text-*, border-* utilities.
+  Font keys generate font-display / font-body utilities and reference
+  the next/font CSS variables attached to <html> in app/layout.tsx.
+*/
+@theme {
+  --color-bg: #0a0e14;
+  --color-surface: #121823;
+  --color-elevated: #1a2230;
+  --color-border: #26303f;
+  --color-border-strong: #34404f;
+
+  --color-accent: #e3b176;
+  --color-accent-hover: #efc79b;
+  --color-accent-muted: #2a2418;
+
+  --color-fg: #eceef2;
+  --color-muted: #8a93a0;
+  --color-muted-strong: #a9b1bc;
+
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Non-theme custom properties used by component utilities. */
+:root {
+  --glow-gold: rgba(227, 177, 118, 0.16);
+  --glow-gold-soft: rgba(227, 177, 118, 0.05);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Keep anchored section headings clear of the sticky nav. */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: rgba(227, 177, 118, 0.26);
+    color: var(--color-fg);
+  }
+
+  /* Visible, keyboard-only focus ring in the accent gold. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Scroll-reveal. Transform/opacity only, so it never triggers layout shift.
+     The hidden state is gated behind html.js (added by an inline script before
+     paint) so that no-JS visitors and crawlers always see fully-rendered
+     content. .is-visible is toggled by components/ui/Reveal.tsx. */
+  .reveal {
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  html.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html.js .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Feather the headshot's dark edges into the page background so the
+     rectangular photo boundary disappears. Centered on the subject. */
+  .headshot-mask {
+    -webkit-mask-image: radial-gradient(
+      118% 118% at 40% 40%,
+      #000 50%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(118% 118% at 40% 40%, #000 50%, transparent 100%);
+  }
+}
