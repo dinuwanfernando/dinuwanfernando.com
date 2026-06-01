@@ -8,10 +8,12 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
-  const [bold, medium] = await Promise.all([
+  const [bold, medium, photo] = await Promise.all([
     readFile(join(process.cwd(), "assets/SpaceGrotesk-700.woff")),
     readFile(join(process.cwd(), "assets/SpaceGrotesk-500.woff")),
+    readFile(join(process.cwd(), "assets/og-headshot.jpg")),
   ]);
+  const photoSrc = `data:image/jpeg;base64,${photo.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -21,15 +23,16 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
+          alignItems: "center",
           justifyContent: "space-between",
           background: "#0a0e14",
           color: "#eceef2",
-          padding: "76px 84px",
+          padding: "64px 76px",
           fontFamily: "Space Grotesk",
         }}
       >
-        {/* Ambient gold glow */}
+        {/* Ambient gold glow behind the portrait */}
         <div
           style={{
             position: "absolute",
@@ -39,68 +42,89 @@ export default async function Image() {
             bottom: 0,
             display: "flex",
             background:
-              "radial-gradient(900px circle at 84% 6%, rgba(227,177,118,0.20), transparent 55%)",
+              "radial-gradient(680px circle at 82% 42%, rgba(227,177,118,0.22), transparent 55%)",
           }}
         />
 
-        {/* Top label */}
+        {/* Left: text */}
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            gap: 16,
-            fontSize: 24,
-            fontWeight: 500,
-            letterSpacing: 2,
-            color: "#e3b176",
+            flexDirection: "column",
+            justifyContent: "center",
+            flex: 1,
+            paddingRight: 52,
           }}
         >
-          <div style={{ width: 40, height: 2, background: "#e3b176" }} />
-          DINUWANFERNANDO.COM
-        </div>
-
-        {/* Name and role */}
-        <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               display: "flex",
-              fontSize: 96,
+              alignItems: "center",
+              gap: 16,
+              fontSize: 23,
+              fontWeight: 500,
+              letterSpacing: 2,
+              color: "#e3b176",
+            }}
+          >
+            <div style={{ width: 40, height: 2, background: "#e3b176" }} />
+            DINUWANFERNANDO.COM
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              fontSize: 78,
               fontWeight: 700,
               letterSpacing: -3,
-              lineHeight: 1.04,
+              lineHeight: 1.05,
+              marginTop: 26,
             }}
           >
             Dinuwan Fernando
           </div>
+
           <div
             style={{
               display: "flex",
-              fontSize: 42,
+              fontSize: 35,
               fontWeight: 500,
               color: "#e3b176",
-              marginTop: 18,
+              marginTop: 14,
             }}
           >
             Co-Founder &amp; CTO at Avagance
           </div>
-        </div>
 
-        {/* Tagline */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-          <div style={{ width: "100%", height: 1, background: "rgba(255,255,255,0.10)" }} />
           <div
             style={{
               display: "flex",
-              fontSize: 27,
+              fontSize: 24,
               fontWeight: 500,
               color: "#a9b1bc",
-              maxWidth: 920,
-              lineHeight: 1.3,
+              marginTop: 24,
+              maxWidth: 560,
+              lineHeight: 1.35,
             }}
           >
             Building AI-native wealth management infrastructure for the UK
             financial advisory industry
           </div>
+        </div>
+
+        {/* Right: headshot */}
+        <div style={{ display: "flex", flexShrink: 0 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={photoSrc}
+            width={360}
+            height={380}
+            style={{
+              borderRadius: 22,
+              border: "1px solid rgba(227,177,118,0.4)",
+              boxShadow: "0 30px 60px -22px rgba(0,0,0,0.65)",
+            }}
+          />
         </div>
       </div>
     ),
