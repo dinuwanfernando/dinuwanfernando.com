@@ -20,7 +20,7 @@ export function Hero() {
         <div className="absolute -bottom-1/4 -left-[12%] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(227,177,118,0.07),transparent_60%)] blur-3xl" />
       </div>
 
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 px-6 py-28 sm:px-8 lg:grid-cols-[1fr_minmax(0,37rem)] lg:gap-12 lg:py-0">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 px-6 py-28 sm:px-8 lg:grid-cols-[1fr_minmax(0,44rem)] lg:gap-10 lg:py-0">
         {/* Copy */}
         <div className="order-2 lg:order-1">
           <p
@@ -98,7 +98,7 @@ export function Hero() {
         {/* Portrait */}
         <div className="order-1 lg:order-2 lg:justify-self-end">
           <div
-            className="animate-rise-scale relative mx-auto w-[clamp(17rem,88vw,37rem)]"
+            className="animate-rise-scale relative mx-auto w-[clamp(20rem,46vw,44rem)]"
             style={{ animationDelay: "0.25s" }}
           >
             <div
@@ -107,13 +107,13 @@ export function Hero() {
             />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-black/60">
               <Image
-                src="/headshot.png"
+                src="/portrait.png"
                 alt={hero.photoAlt}
                 width={1372}
                 height={1147}
                 quality={90}
                 priority
-                sizes="(min-width: 1024px) 37rem, 88vw"
+                sizes="(min-width: 1024px) 44rem, 90vw"
                 className="h-auto w-full"
               />
               <div

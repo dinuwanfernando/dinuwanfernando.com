@@ -30,7 +30,7 @@ export const personJsonLd = {
   jobTitle: "Co-Founder and Chief Technology Officer",
   description: site.description,
   url: site.url,
-  image: `${site.url}/headshot.png`,
+  image: `${site.url}/portrait.png`,
   email: `mailto:${site.email}`,
   worksFor: {
     "@type": "Organization",
