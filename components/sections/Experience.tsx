@@ -10,15 +10,20 @@ export function Experience() {
     <Section id="experience" labelledBy="experience-heading">
       <SectionHeading
         id="experience-heading"
+        index="02"
         eyebrow="Experience"
         title="Leading engineering at Avagance"
       />
 
       <div className="space-y-5">
         <Reveal>
-          <Card>
+          <Card className="overflow-hidden pl-7">
+            <span
+              aria-hidden="true"
+              className="absolute inset-y-6 left-0 w-0.5 rounded-full bg-gradient-to-b from-accent to-transparent"
+            />
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-              <h3 className="text-xl font-semibold text-fg">
+              <h3 className="text-xl font-semibold text-fg sm:text-2xl">
                 {experience.role}
               </h3>
               <span className="shrink-0 text-sm font-medium text-muted">

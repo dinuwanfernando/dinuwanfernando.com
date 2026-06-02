@@ -10,29 +10,40 @@ export function Contact() {
     <Section id="contact" labelledBy="contact-heading">
       <SectionHeading
         id="contact-heading"
+        index="05"
         eyebrow="Contact"
         title="Get in touch"
       />
 
       <Reveal>
-        <div className="rounded-2xl border border-border bg-surface/50 p-8 sm:p-10">
-          <p className="max-w-xl text-base leading-relaxed text-muted-strong sm:text-lg">
-            {contact.intro}
-          </p>
-
-          <a
-            href={`mailto:${contact.email}`}
-            className="mt-7 inline-flex items-center gap-3 text-xl font-semibold text-fg transition-colors hover:text-accent sm:text-2xl"
-          >
-            <MailIcon className="h-6 w-6 shrink-0 text-accent" />
-            <span className="break-all">{contact.email}</span>
-          </a>
-
-          <div className="mt-9 border-t border-border pt-8">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-              Elsewhere
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-surface/50 p-8 sm:p-12">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(227,177,118,0.13),transparent_65%)] blur-2xl"
+          />
+          <div className="relative">
+            <p className="max-w-xl text-lg leading-relaxed text-muted-strong sm:text-xl">
+              {contact.intro}
             </p>
-            <SocialLinks />
+
+            <a
+              href={`mailto:${contact.email}`}
+              className="group mt-8 inline-flex items-center gap-4 text-2xl font-bold tracking-tight sm:text-4xl"
+            >
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border-strong text-accent transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-bg sm:h-14 sm:w-14">
+                <MailIcon className="h-6 w-6" />
+              </span>
+              <span className="text-gold-gradient break-all">
+                {contact.email}
+              </span>
+            </a>
+
+            <div className="mt-10 border-t border-border pt-8">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+                Elsewhere
+              </p>
+              <SocialLinks />
+            </div>
           </div>
         </div>
       </Reveal>

@@ -114,11 +114,11 @@ export default async function Image() {
 
         {/* Right: headshot */}
         <div style={{ display: "flex", flexShrink: 0 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            alt=""
             src={photoSrc}
-            width={360}
-            height={380}
+            width={426}
+            height={356}
             style={{
               borderRadius: 22,
               border: "1px solid rgba(227,177,118,0.4)",
