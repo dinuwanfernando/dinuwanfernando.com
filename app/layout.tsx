@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
-import { site, personJsonLd } from "@/lib/site";
+import { site, personJsonLd, websiteJsonLd } from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -28,15 +28,14 @@ export const metadata: Metadata = {
   publisher: site.name,
   keywords: [
     "Dinuwan Fernando",
-    "Avagance",
     "CTO",
-    "Co-Founder",
+    "Avagance",
+    "software engineer",
     "fintech",
     "wealth management",
-    "AI",
     "TypeScript",
-    "software engineering",
-    "UK financial advisers",
+    "full-stack developer",
+    "Co-Founder",
   ],
   alternates: {
     canonical: "/",
@@ -57,13 +56,13 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     title: site.title,
-    description: site.description,
+    description: site.ogDescription,
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
     title: site.title,
-    description: site.description,
+    description: site.twitterDescription,
   },
   category: "technology",
 };
@@ -104,6 +103,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c"),
           }}
         />
       </body>

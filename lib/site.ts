@@ -7,7 +7,11 @@ export const site = {
   name: "Dinuwan Fernando",
   title: "Dinuwan Fernando - Co-Founder & CTO at Avagance",
   description:
-    "Dinuwan Fernando is Co-Founder and CTO at Avagance, building AI-native wealth management infrastructure for the UK financial advisory industry.",
+    "Dinuwan Fernando is the Co-Founder and CTO of Avagance, building AI-native wealth management infrastructure for UK financial advisors. Full-stack engineer specializing in TypeScript, Node.js, Python, and cloud architecture.",
+  ogDescription:
+    "Building AI-native wealth management infrastructure for UK financial advisors. Full-stack engineer and startup co-founder.",
+  twitterDescription:
+    "Building AI-native wealth management infrastructure for UK financial advisors.",
   role: "Co-Founder & CTO",
   company: {
     name: "Avagance",
@@ -27,8 +31,9 @@ export const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: site.name,
-  jobTitle: "Co-Founder and Chief Technology Officer",
-  description: site.description,
+  jobTitle: "Co-Founder & Chief Technology Officer",
+  description:
+    "Co-Founder and CTO of Avagance, building AI-native wealth management infrastructure for UK financial advisors.",
   url: site.url,
   image: `${site.url}/portrait.png`,
   email: `mailto:${site.email}`,
@@ -42,12 +47,26 @@ export const personJsonLd = {
     name: "University of Plymouth",
   },
   knowsAbout: [
-    "Fintech",
-    "Artificial Intelligence",
-    "Wealth Management",
-    "Software Engineering",
     "TypeScript",
+    "Node.js",
+    "React",
+    "Next.js",
+    "Python",
     "Machine Learning",
+    "PostgreSQL",
+    "Cloud Architecture",
+    "Financial Technology",
+    "Wealth Management",
   ],
   sameAs: [site.socials.linkedin, site.socials.github, site.socials.medium],
+};
+
+/** WebSite structured data. */
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: site.url,
+  description:
+    "Personal website of Dinuwan Fernando, Co-Founder and CTO of Avagance.",
 };
