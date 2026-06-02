@@ -35,9 +35,8 @@ export function Hero() {
             className="animate-rise mt-6 text-[clamp(2.75rem,7vw,5.25rem)] font-bold leading-[0.95] tracking-[-0.035em] text-fg"
             style={{ animationDelay: "0.12s" }}
           >
-            Dinuwan
-            <br />
-            <span className="text-gold-gradient">Fernando</span>
+            Dinuwan{" "}
+            <span className="block text-gold-gradient">Fernando</span>
           </h1>
 
           <p
