@@ -109,8 +109,8 @@ export function Hero() {
               <Image
                 src="/headshot.png"
                 alt={hero.photoAlt}
-                width={1754}
-                height={1464}
+                width={1372}
+                height={1147}
                 quality={90}
                 priority
                 sizes="(min-width: 1024px) 37rem, 88vw"
