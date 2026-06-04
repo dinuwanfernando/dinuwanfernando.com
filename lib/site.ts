@@ -21,7 +21,7 @@ export const site = {
   socials: {
     linkedin: "https://www.linkedin.com/in/dinuwan-fernando/",
     github: "https://github.com/dinuwanfernando",
-    medium: "https://medium.com/@dinofernando2000",
+    medium: "https://medium.com/@dinuwanfernando",
   },
   ogAlt: "Dinuwan Fernando, Co-Founder and CTO at Avagance",
 } as const;

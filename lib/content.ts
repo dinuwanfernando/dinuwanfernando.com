@@ -122,20 +122,20 @@ export const writing: Article[] = [
       "Building a Credit Risk Classifier: What Random Forest and XGBoost Actually Taught Me",
     excerpt:
       "My first ML model hit 80.66% accuracy. Then I tested it with real inputs and the predictions were inverted. The full story of the failure, the rebuild, and what I'd do differently now.",
-    href: "https://medium.com/@dinofernando2000/building-a-credit-risk-classifier-what-random-forest-and-xgboost-actually-taught-me-20ffd6e290bd",
+    href: "https://medium.com/@dinuwanfernando/building-a-credit-risk-classifier-what-random-forest-and-xgboost-actually-taught-me-20ffd6e290bd",
   },
   {
     title:
       "How I Architected a Full-Stack Fintech Platform From Scratch as a First-Time CTO",
     excerpt:
       "The technical decisions behind building Avagance - from choosing a modular monolith over microservices to organizing 200+ route files without chaos.",
-    href: "https://medium.com/@dinofernando2000/how-i-architected-a-full-stack-fintech-platform-from-scratch-as-a-first-time-cto-cc9aae14c14a",
+    href: "https://medium.com/@dinuwanfernando/how-i-architected-a-full-stack-fintech-platform-from-scratch-as-a-first-time-cto-cc9aae14c14a",
   },
   {
     title: "How We Run the Engineering Operation for a Fintech Startup",
     excerpt:
       "CI/CD pipeline design, database schema management, testing strategy, and the engineering systems that keep 600+ service modules maintainable.",
-    href: "https://medium.com/@dinofernando2000/how-we-run-the-engineering-operation-for-a-fintech-startup-cc4621be41ec",
+    href: "https://medium.com/@dinuwanfernando/how-we-run-the-engineering-operation-for-a-fintech-startup-cc4621be41ec",
   },
 ];
 
