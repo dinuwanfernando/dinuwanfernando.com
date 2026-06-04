@@ -22,7 +22,7 @@ export function SocialLinks({
           <a
             href={href}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
             aria-label={`${label} (opens in a new tab)`}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted-strong transition-colors duration-200 hover:border-accent hover:text-accent"
           >
