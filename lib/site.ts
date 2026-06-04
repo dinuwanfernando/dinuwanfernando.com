@@ -26,47 +26,73 @@ export const site = {
   ogAlt: "Dinuwan Fernando, Co-Founder and CTO at Avagance",
 } as const;
 
-/** Person structured data (schema.org) for search engines and AI crawlers. */
-export const personJsonLd = {
+/**
+ * Connected schema.org entity graph. Cross-referencing the nodes by @id tells
+ * search engines this page is the authoritative profile for the person Dinuwan
+ * Fernando, who works for Avagance, strengthening the entity signal for his name.
+ */
+export const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.name,
-  jobTitle: "Co-Founder & Chief Technology Officer",
-  description:
-    "Co-Founder and CTO of Avagance, building AI-native wealth management infrastructure for UK financial advisors.",
-  url: site.url,
-  image: `${site.url}/portrait.png`,
-  email: `mailto:${site.email}`,
-  worksFor: {
-    "@type": "Organization",
-    name: site.company.name,
-    url: site.company.url,
-  },
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "University of Plymouth",
-  },
-  knowsAbout: [
-    "TypeScript",
-    "Node.js",
-    "React",
-    "Next.js",
-    "Python",
-    "Machine Learning",
-    "PostgreSQL",
-    "Cloud Architecture",
-    "Financial Technology",
-    "Wealth Management",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${site.url}/#person`,
+      name: site.name,
+      givenName: "Dinuwan",
+      familyName: "Fernando",
+      jobTitle: "Co-Founder & Chief Technology Officer",
+      description:
+        "Co-Founder and CTO of Avagance, building AI-native wealth management infrastructure for UK financial advisors.",
+      url: site.url,
+      mainEntityOfPage: `${site.url}/#profilepage`,
+      image: `${site.url}/portrait.png`,
+      email: `mailto:${site.email}`,
+      worksFor: { "@id": `${site.company.url}/#organization` },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "University of Plymouth",
+      },
+      knowsAbout: [
+        "TypeScript",
+        "Node.js",
+        "React",
+        "Next.js",
+        "Python",
+        "Machine Learning",
+        "PostgreSQL",
+        "Cloud Architecture",
+        "Financial Technology",
+        "Wealth Management",
+      ],
+      sameAs: [site.socials.linkedin, site.socials.github, site.socials.medium],
+    },
+    {
+      "@type": "Organization",
+      "@id": `${site.company.url}/#organization`,
+      name: site.company.name,
+      url: site.company.url,
+      description:
+        "AI-native wealth management platform for UK Independent Financial Advisors.",
+      founder: { "@id": `${site.url}/#person` },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      description:
+        "Personal website of Dinuwan Fernando, Co-Founder and CTO of Avagance.",
+      publisher: { "@id": `${site.url}/#person` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${site.url}/#profilepage`,
+      url: site.url,
+      name: site.title,
+      isPartOf: { "@id": `${site.url}/#website` },
+      about: { "@id": `${site.url}/#person` },
+      mainEntity: { "@id": `${site.url}/#person` },
+    },
   ],
-  sameAs: [site.socials.linkedin, site.socials.github, site.socials.medium],
-};
-
-/** WebSite structured data. */
-export const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: site.name,
-  url: site.url,
-  description:
-    "Personal website of Dinuwan Fernando, Co-Founder and CTO of Avagance.",
 };
