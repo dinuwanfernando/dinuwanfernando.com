@@ -16,17 +16,17 @@ export const navLinks: NavLink[] = [
 
 export const hero = {
   name: "Dinuwan Fernando",
-  title: "Co-Founder & CTO at Avagance",
+  title: "Co-Founder & CTO at Bro in Finance",
   tagline:
-    "Building AI-native wealth management infrastructure for the UK financial advisory industry",
-  photoAlt: "Dinuwan Fernando, Co-Founder and CTO at Avagance",
+    "Building Avagance, AI-native wealth management infrastructure for the UK financial advisory industry",
+  photoAlt: "Dinuwan Fernando, Co-Founder and CTO at Bro in Finance",
 };
 
 export const about = {
   paragraphs: [
-    "I'm Dinuwan Fernando, Co-Founder and Chief Technology Officer at Avagance. Together with my co-founder Lithika Ranepura, we're building an AI-native wealth management platform designed for UK Independent Financial Advisors and wealth management firms.",
-    "I lead the technical architecture and engineering at Avagance, where we've built a TypeScript modular monolith with 600+ service modules, a Python ML microservice, real-time streaming infrastructure, and a multi-tenant data model designed for FCA-regulated financial services.",
-    "Before Avagance, I built machine learning models for credit risk prediction, full-stack business applications, and desktop CRM tools. I hold a BSc (Hons) in Software Engineering from the University of Plymouth.",
+    "I'm Dinuwan Fernando, Co-Founder and Chief Technology Officer at Bro in Finance Ltd, a UK financial technology company. Together with my co-founder and CEO Lithika Ranepura, we build Avagance, an AI-native wealth management platform designed for UK Independent Financial Advisors and wealth management firms.",
+    "I lead the technical architecture and engineering behind Avagance, where we've built a TypeScript modular monolith with 600+ service modules, a Python ML microservice, real-time streaming infrastructure, and a multi-tenant data model designed for FCA-regulated financial services.",
+    "Before co-founding Bro in Finance, I built machine learning models for credit risk prediction, full-stack business applications, and desktop CRM tools. I hold a BSc (Hons) in Software Engineering from the University of Plymouth.",
   ],
 };
 
@@ -49,11 +49,11 @@ export const techStack: string[] = [
 
 export const experience = {
   role: "Co-Founder & Chief Technology Officer",
-  company: "Avagance",
-  companyUrl: "https://avagance.com",
+  company: "Bro in Finance Ltd",
+  companyUrl: "https://broinfinance.com",
   period: "2024 - Present",
   description:
-    "Leading the technical architecture and engineering of an AI-native wealth management platform for UK IFAs. Built the full-stack infrastructure from the ground up - TypeScript monorepo, Express API with 200+ route registries, Next.js advisor portal, PostgreSQL with Drizzle ORM, Python ML microservice, and GCP deployment pipeline.",
+    "Co-founded Bro in Finance Ltd and lead its engineering. We build Avagance, an AI-native wealth management platform for UK IFAs. Built the full-stack infrastructure from the ground up - TypeScript monorepo, Express API with 200+ route registries, Next.js advisor portal, PostgreSQL with Drizzle ORM, Python ML microservice, and GCP deployment pipeline.",
 };
 
 export const education = {

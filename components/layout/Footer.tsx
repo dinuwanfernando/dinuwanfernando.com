@@ -1,4 +1,5 @@
 import { footer } from "@/lib/content";
+import { site } from "@/lib/site";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export function Footer() {
@@ -24,6 +25,14 @@ export function Footer() {
             Back to top
           </a>
         </div>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-6 pb-8 sm:px-8">
+        <p className="text-center text-xs leading-relaxed text-muted/80 sm:text-left">
+          {site.company.legalName} &middot; Registered in England and Wales, No.{" "}
+          {site.company.number} &middot; {site.company.street},{" "}
+          {site.company.locality} {site.company.postalCode}
+        </p>
       </div>
     </footer>
   );

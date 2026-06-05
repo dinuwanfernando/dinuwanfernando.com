@@ -50,7 +50,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:decoration-accent"
             >
-              Avagance
+              Bro in Finance
             </a>
           </p>
 

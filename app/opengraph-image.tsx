@@ -93,7 +93,7 @@ export default async function Image() {
               marginTop: 14,
             }}
           >
-            Co-Founder &amp; CTO at Avagance
+            Co-Founder &amp; CTO at Bro in Finance
           </div>
 
           <div
@@ -107,8 +107,8 @@ export default async function Image() {
               lineHeight: 1.35,
             }}
           >
-            Building AI-native wealth management infrastructure for the UK
-            financial advisory industry
+            Building Avagance, AI-native wealth management infrastructure for
+            the UK financial advisory industry
           </div>
         </div>
 
