@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Card } from "@/components/ui/Card";
 import { ArrowUpRightIcon } from "@/components/icons";
 import { experience, education } from "@/lib/content";
+import { site } from "@/lib/site";
 
 export function Experience() {
   return (
@@ -40,6 +41,12 @@ export function Experience() {
               {experience.company}
               <ArrowUpRightIcon className="h-3.5 w-3.5" />
             </a>
+
+            <p className="mt-2 text-xs text-muted">
+              Registered in England and Wales &middot; Company No.{" "}
+              {site.company.number} &middot; {site.company.street},{" "}
+              {site.company.locality} {site.company.postalCode}
+            </p>
 
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-strong">
               {experience.description}
