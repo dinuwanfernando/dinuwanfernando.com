@@ -58,7 +58,17 @@ export function Hero() {
             className="animate-rise mt-5 max-w-lg text-base leading-relaxed text-muted-strong sm:text-lg"
             style={{ animationDelay: "0.28s" }}
           >
-            {hero.tagline}
+            Building{" "}
+            <a
+              href={site.product.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:decoration-accent"
+            >
+              Avagance
+            </a>
+            , AI-native wealth management infrastructure for the UK financial
+            advisory industry
           </p>
 
           <div
